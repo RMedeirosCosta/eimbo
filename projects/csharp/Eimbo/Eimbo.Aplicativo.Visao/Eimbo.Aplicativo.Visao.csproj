@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3B2039C6-38E1-4069-8A66-8373258C451A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Eimbo.Aplicativo.Visao</RootNamespace>
+    <AssemblyName>Eimbo.Aplicativo.Visao</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cadastro\IVisaoCadastroCidade.cs" />
+    <Compile Include="Cadastro\IVisaoCadastroCliente.cs" />
+    <Compile Include="Cadastro\IVisaoCadastroEmpresa.cs" />
+    <Compile Include="Cadastro\IVisaoCadastroEstado.cs" />
+    <Compile Include="Cadastro\IVisaoCadastroFormaPagamento.cs" />
+    <Compile Include="Cadastro\IVisaoCadastroPadrao.cs" />
+    <Compile Include="Cadastro\IVisaoCadastroServico.cs" />
+    <Compile Include="Comum\IVisaoInicial.cs" />
+    <Compile Include="Comum\IVisaoPadrao.cs" />
+    <Compile Include="ModuloAtendimento\IVisaoAtendimento.cs" />
+    <Compile Include="ModuloAtendimento\IVisaoRecebimentoAtendimento.cs" />
+    <Compile Include="ModuloCaixa\IVisaoExtratoDoCaixa.cs" />
+    <Compile Include="ModuloCaixa\IVisaoMovimentacaoCaixa.cs" />
+    <Compile Include="ModuloCaixa\IVisaoNovoCaixa.cs" />
+    <Compile Include="ModuloCaixa\IVisaoSaldoDoCaixa.cs" />
+    <Compile Include="ModuloCaixa\IVisaoSaldoDoCaixaDetalhado.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
