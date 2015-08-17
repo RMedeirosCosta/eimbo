@@ -1,0 +1,133 @@
+# maintain spacing between certain elements
+use_spacer yes
+
+# set to yes if you want conky to be forked in the background
+background yes
+
+use_xft yes
+
+# Xft font when Xft is enabled
+xftfont Bitstream Vera Sans Mono-7
+#xftfont Andale Mono-9
+#xftfont Clean-8
+#xftfont cubicfive10:pixelsize=8
+#xftfont squaredance10:pixelsize=14
+#xftfont swf!t_v02:pixelsize=10
+
+# Text alpha when using Xft
+xftalpha 1
+mail_spool $MAIL
+
+# Update interval in seconds
+update_interval 1
+
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+own_window_transparent yes
+own_window_type conky
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_argb_visual yes
+own_window_argb_value 0
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# Minimum size of text area
+minimum_size 100 0
+maximum_width 1300
+
+# Draw shades?
+draw_shades yes
+
+
+# Draw outlines?
+draw_outline no # amplifies text
+
+# Draw borders around text
+draw_borders no
+
+# Stippled borders?
+stippled_borders 0
+
+# border margins
+#border_margin 9
+
+# border width
+border_width 1
+
+# Default colors and also border colors, grey90 == #e5e5e5
+default_color grey90
+default_shade_color black
+default_outline_color Red
+
+# Text alignment, other possible values are commented
+#alignment top_left
+alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+gap_x 24
+gap_y 24
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+
+# set to yes if you want all text to be in uppercase
+uppercase no
+
+# stuff after 'TEXT' will be formatted on screen
+# #5C246E 3399FF
+TEXT
+${color 3399FF}$nodename$color      ${color #828282}$sysname 
+$kernel on 
+$machine
+#Incluir formatação
+$time$color 
+
+${color 3399FF}PROCESSING$color
+   ${color #E1E4D6}${cpubar cpu1}
+   ${color #E1E4D6}${cpubar cpu2}
+   ${color #E1E4D6}${cpubar cpu3}
+   ${color #E1E4D6}${cpubar cpu4}
+   ${color #E1E4D6}${cpubar cpu5}
+   ${color #E1E4D6}${cpubar cpu6}
+   ${color #E1E4D6}${cpubar cpu7}
+   ${color #E1E4D6}${cpubar cpu8}
+   
+   ${color #3399FF}NAME             PID       CPU%      MEM%
+   ${color #e5e5e5}${top name 1} ${top pid 1}   ${top cpu 1}    ${top mem 1}
+   ${color #c4c4c4}${top name 2} ${top pid 2}   ${top cpu 2}    ${top mem 2}
+   ${color #a3a3a3}${top name 3} ${top pid 3}   ${top cpu 3}    ${top mem 3}
+   ${color #828282}${top name 4} ${top pid 4}   ${top cpu 4}    ${top mem 4}
+
+${color 3399FF}DATA$color
+   ${color 3399FF}MEMORY$color
+	   ${color #3399FF}RAM: $color    $memperc%  ${color 
+#E1E4D6} ${membar 6} $color
+	   ${color #3399FF}Swap:$color    $swapperc%    ${color 
+#E1E4D6}${swapbar 6}$color
+
+   ${color 3399FF}HARD DISK$color
+	   ${color #3399FF}/:	$color      ${fs_free_perc /}%  $fs_free  ${color #E1E4D6}${fs_bar 6 /}$color
+	   ${color #3399FF}/home: $color  ${fs_free_perc 
+/home/ricardo}%  ${fs_free /home/ricardo}  ${color #E1E4D6}${fs_bar 6 /home/ricardo}$color
+
+   ${color #3399FF}Upload:$color  ${upspeed eth0}kb/s${color 
+#910000}$color 
+   ${upspeedgraph eth0}
+   ${color #3399FF}Download:$color  ${downspeed 
+eth0}kb/s$color
+   ${downspeedgraph eth0}
+
+${color 3399FF}Temperature$color
+   ${color #3399FF}CPU: $color ${acpitemp}°C
+   ${color #3399FF}Nvidia Graficcard:$color ${nvidia temp}°C
+
+${color 3399FF}Kernel Log$color
+
+${exec dmesg | tail -20}
+
+${color 3399FF}TODO$color
+
+${exec cat ~/todo}
