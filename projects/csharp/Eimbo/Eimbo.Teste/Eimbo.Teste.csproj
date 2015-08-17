@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{730BC90B-0D0D-4937-A2C9-68B7E8D8E5EB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Eimbo.Teste</RootNamespace>
+    <AssemblyName>Eimbo.Teste</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.0.10827\NET40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.3.3.3.4000\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.0.12.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Npgsql.2.0.12.1\lib\net40\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="Aplicativo\ContainerInjecaoDependencia.cs" />
+    <Compile Include="Dominio\Cadastro\Dado_Um_ValidadorCidade.cs" />
+    <Compile Include="Dominio\Cadastro\Dado_Um_ValidadorCliente.cs" />
+    <Compile Include="Dominio\Cadastro\Dado_Um_ValidadorEstado.cs" />
+    <Compile Include="Dominio\Cadastro\Dado_Um_ValidadorEmpresa.cs" />
+    <Compile Include="Dominio\Cadastro\Dado_Um_ValidadorFormaPagamento.cs" />
+    <Compile Include="Dominio\Cadastro\Dado_Um_ValidadorServico.cs" />
+    <Compile Include="Dominio\ModuloAtendimento\Dado_Uma_FachadaAtendimento.cs" />
+    <Compile Include="Dominio\ModuloAtendimento\Dado_Um_Atendimento.cs" />
+    <Compile Include="Dominio\ModuloCaixa\Dado_Uma_FachadaCaixa.cs" />
+    <Compile Include="Dominio\ModuloCaixa\Dado_Um_LancamentoCaixa.cs" />
+    <Compile Include="Dominio\Comum\Dado_Uma_Empresa.cs" />
+    <Compile Include="Dominio\Comum\Dado_Uma_FormaPagamento.cs" />
+    <Compile Include="Dominio\Comum\Dado_Uma_Pessoa.cs" />
+    <Compile Include="Dominio\ModuloCaixa\Dado_Um_Caixa.cs" />
+    <Compile Include="Dominio\Comum\Dado_Um_Cliente.cs" />
+    <Compile Include="Dominio\Comum\Dado_Um_Estado.cs" />
+    <Compile Include="Dominio\Comum\Dado_Uma_Cidade.cs" />
+    <Compile Include="Dominio\Comum\Dado_Um_Servico.cs" />
+    <Compile Include="Dominio\Comum\Stub\CidadeStub.cs" />
+    <Compile Include="Dominio\Comum\Stub\ClienteStub.cs" />
+    <Compile Include="Dominio\Comum\Stub\EmpresaStub.cs" />
+    <Compile Include="Dominio\Comum\Stub\EstadoStub.cs" />
+    <Compile Include="Dominio\Comum\Stub\FormaPagamentoStub.cs" />
+    <Compile Include="Dominio\Comum\Stub\ServicoStub.cs" />
+    <Compile Include="Infraestrutura\Repositorio\NHibernate\Cadastro\Dado_Um_EstadoRepositorioNHibernate.cs" />
+    <Compile Include="Infraestrutura\Repositorio\NHibernate\RepositorioNHibernateTeste.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Teste.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Eimbo.Aplicativo.Contrato\Eimbo.Dominio.Contrato.csproj">
+      <Project>{a74d809a-cfd9-4b34-afa6-6c025a8e82ee}</Project>
+      <Name>Eimbo.Dominio.Contrato</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Eimbo.Aplicativo.DTO\Eimbo.Dominio.DTO.csproj">
+      <Project>{f823a9ec-7c2f-4be8-8d7a-24e18f59ab05}</Project>
+      <Name>Eimbo.Dominio.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Eimbo.Aplicativo.Fachada\Eimbo.Dominio.Servico.csproj">
+      <Project>{8a2ceed3-e431-4053-b27b-fa2c8bbeb44b}</Project>
+      <Name>Eimbo.Dominio.Servico</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Eimbo.Dominio\Eimbo.Dominio.csproj">
+      <Project>{ce2dff9f-965b-4a20-8a50-db41c4154901}</Project>
+      <Name>Eimbo.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Eimbo.Infraestrutura.Repositorio.NHibernate\Eimbo.Infraestrutura.Repositorio.NHibernate.csproj">
+      <Project>{2d4f003d-3e66-44a7-b949-e6b1375527f2}</Project>
+      <Name>Eimbo.Infraestrutura.Repositorio.NHibernate</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
